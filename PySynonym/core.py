@@ -14,13 +14,13 @@ else:
 
 
 def synonym(word):
-    req = Request('https://www.thesaurus.com/browse/%s'%word)
+    req = Request('https://www.thesaurus.com/browse/%s'%word, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urlopen(req).read()
     status = BeautifulSoup(webpage, "html5lib").findAll("div", {"class": "relevancy-list"})[0] #Find the HTML class that contains the synonyms
     
     synonyms = []
     
-    if sys.version_info >= (3, 0):
+    if sys.version_info >= (3, 0): #if Python 2.x is used, the result has to be encoded.
         for tag in status.ul.findAll('li'):
             synonyms.append(tag.select('span.text')[0].get_text())
     else:
