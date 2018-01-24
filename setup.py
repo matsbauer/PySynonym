@@ -10,6 +10,6 @@ setup(
     keywords = "python synonym plugin",
     url = "https://github.com/matsbauer/PySynonym",
     packages=['PySynonym'],
-    long_description=open('README.md').read(),
+    long_description=open('readme-pypi.rst').read(),
     install_requires=['bs4', 'beautifulsoup4']
 )
