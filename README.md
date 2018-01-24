@@ -1,5 +1,8 @@
 # PySynonym
 PySynonym is a plugin that returns a list of synonyms for the given word. This is very useful when programming bots and digital assistants, to increase their understanding.
 
-# How To use PySynonym <br>
+## How to use PySynonym <br>
 <b>Installation:</b> pip install PySynonym
+<b>Including:</b> import PySynonym as ps
+<b>Finding synonyms:</b> ps.synonym('word')
+<b>Finding definitons:</b> ps.explain('word')
