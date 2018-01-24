@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 #class PySynonym(object):
     
-def parser(word):
+def find(word):
     req = Request('http://www.thesaurus.com/browse/%s'%word, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urlopen(req).read()
     status = BeautifulSoup(webpage, "html5lib").findAll("div", {"class": "relevancy-list"})[0] #Find the HTML class that contains the synonyms
@@ -21,6 +21,6 @@ def parser(word):
     return synonyms
     
 if __name__ == "__main__":
-    d = parser('fun')
+    d = find('fun')
     print(d)
     
