@@ -6,3 +6,14 @@ PySynonym is a plugin that returns a list of synonyms for the given word. This i
 <b>Including:</b> import PySynonym as ps <br>
 <b>Finding synonyms:</b> ps.synonym('word') <br>
 <b>Finding definitons:</b> ps.explain('word') <br>
+
+## Example code <br>
+```
+import PySynonym as ps
+
+syn = ps.synonym('house')
+if 'building' in syn:
+    print("Building is a synonym of house")
+else:
+    print("Building is no synonym of house")
+```
