@@ -17,15 +17,16 @@ if 'building' in syn:
 else:
     print("Building is no synonym of house")
 ```
-Advanced example using nltk processing
+Advanced example using nltk processing:
 ```python
 import PySynonym as ps
 import nltk
 
-string = "Please turn on the lamp"
+string = "Please turn on the light"
 sentence = nltk.word_tokenize(string)
 
 if len(set(sentence) & set(ps.synonym('lamp'))) > 0:
-    print("Turn the light on")
+    print("Turn the lamp on")
 
 ```
+The command to turn on the light is being split into words using nltk. Then the list of tokens is being compared to the list of synonyms of 'lamp' to see if it matches. If yes, the light is being turned on.
