@@ -18,7 +18,7 @@ def synonym(word):
     webpage = urlopen(req).read()
     status = BeautifulSoup(webpage, "html5lib").findAll("div", {"class": "relevancy-list"})[0] #Find the HTML class that contains the synonyms
     
-    synonyms = []
+    synonyms = [word] #adds the init word to the list
     
     if sys.version_info >= (3, 0): #if Python 2.x is used, the result has to be encoded.
         for tag in status.ul.findAll('li'):

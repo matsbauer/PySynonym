@@ -1,0 +1,4 @@
+Added the function of inserting the searched word into the returned list - so when searching for the word lamp and having the word lamp in the sentence, returnal is positive.
+
+Version 0.0.6 needs to be uploaded to pip in order to work.
+Version 0.0.5 the readme-pypi.rst file had to be removed, as it caused an error in the installation process.

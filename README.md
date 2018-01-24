@@ -17,3 +17,12 @@ if 'building' in syn:
 else:
     print("Building is no synonym of house")
 ```
+```python
+import PySynonym as ps
+
+string = "Please start the music mate"
+for word in string:
+    if ("music" in ps.synonym(word)):
+        play()
+
+```
