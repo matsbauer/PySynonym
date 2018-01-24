@@ -4,7 +4,7 @@
 # date created: 24.01.2018
 
 try:
-    from .core import *
+    from .core import find
 except:
-    from core import *
+    from core import find
 

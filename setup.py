@@ -10,4 +10,5 @@ setup(
     keywords = "python synonym plugin",
     url = "https://github.com/matsbauer/PySynonym",
     packages=['PySynonym'],
+    install_requires=['bs4']
 )

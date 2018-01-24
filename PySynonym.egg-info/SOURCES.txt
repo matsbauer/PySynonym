@@ -1,0 +1,8 @@
+setup.py
+PySynonym/__init__.py
+PySynonym/core.py
+PySynonym.egg-info/PKG-INFO
+PySynonym.egg-info/SOURCES.txt
+PySynonym.egg-info/dependency_links.txt
+PySynonym.egg-info/requires.txt
+PySynonym.egg-info/top_level.txt

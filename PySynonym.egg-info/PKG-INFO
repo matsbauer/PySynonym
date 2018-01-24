@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: PySynonym
+Version: 0.0.1
+Summary: PySynonym is a plugin that returns a list of synonyms for the given word. This is very useful when programming bots and digital assistants, to increase their understanding. 
+Home-page: https://github.com/matsbauer/PySynonym
+Author: Mats Bauer
+Author-email: mats.bauer@icloud.com
+License: BSD
+Description: UNKNOWN
+Keywords: python synonym plugin
+Platform: UNKNOWN
