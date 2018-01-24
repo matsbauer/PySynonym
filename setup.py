@@ -11,5 +11,5 @@ setup(
     url = "https://github.com/matsbauer/PySynonym",
     packages=['PySynonym'],
     long_description=open('README.md').read(),
-    install_requires=['bs4']
+    install_requires=['bs4', 'beautifulsoup4']
 )
