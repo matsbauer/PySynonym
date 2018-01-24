@@ -3,8 +3,14 @@
 # creator: matsbauer
 # date created: 24.01.2018
 
-from urllib.request import Request, urlopen
-from bs4 import BeautifulSoup
+import sys
+
+if sys.version_info >= (3, 0):
+    from urllib.request import Request, urlopen
+    from bs4 import BeautifulSoup
+else:
+    print("Sorry, Python 2.x is currently not supported")
+    sys.exit()
 
 
 def synonym(word):
@@ -28,7 +34,7 @@ def explain(word):
     string = status.get_text().lstrip().rstrip()
     definition = " ".join(string.split())
     
-    return definition
+    return definition.capitalize()
     
 def help():
     print("Get a list of synonyms using: ps.synonym('word')\n" + \
@@ -37,6 +43,5 @@ def help():
     
     
 if __name__ == "__main__":
-    help()
     d = explain('house')
     print(d)
