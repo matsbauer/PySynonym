@@ -17,12 +17,15 @@ if 'building' in syn:
 else:
     print("Building is no synonym of house")
 ```
+Advanced example using nltk processing
 ```python
 import PySynonym as ps
+import nltk
 
-string = "Please start the music mate"
-for word in string:
-    if ("music" in ps.synonym(word)):
-        play()
+string = "Please turn on the lamp"
+sentence = nltk.word_tokenize(string)
+
+if len(set(sentence) & set(ps.synonym('lamp'))) > 0:
+    print("Turn the light on")
 
 ```
