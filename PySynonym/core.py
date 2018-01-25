@@ -46,6 +46,14 @@ def acronym(word):
     return acronyms
     
 
+def wordoftheday():
+    req = Request('http://translate.reference.com/', headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req).read()
+    status = BeautifulSoup(webpage, "html5lib").findAll("a", {"class": "word"})[0] #Find the HTML class that contains the synonyms
+    
+    return status.get_text().capitalize()
+    
+
 def explain(word):
     req = Request('https://www.dictionary.com/browse/%s'%word, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urlopen(req).read()
@@ -64,6 +72,8 @@ def help():
 
 if __name__ == "__main__":
     testcase = acronym('fun')
+    print(testcase)
+    testcase = wordoftheday()
     print(testcase)
     testcase = explain('house')
     print(testcase)
