@@ -4,13 +4,13 @@
 # date created: 24.01.2018
 
 import sys
+from bs4 import BeautifulSoup
 
 if sys.version_info >= (3, 0):
     from urllib.request import Request, urlopen
-    from bs4 import BeautifulSoup
 else:
     from urllib2 import Request, urlopen
-    from bs4 import BeautifulSoup
+    
 
 
 def synonym(word):
