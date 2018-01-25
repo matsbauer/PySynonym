@@ -39,15 +39,15 @@ import PySynonym as ps
 
 string = "What is the word of the day?"
 
-return ps.wordoftheday()
+print(ps.wordoftheday())
 
 // or
 
 string = "What is the word of the day and its definition?"
 
 word = ps.wordoftheday()
-defintion = ps.explain(word)
+definition = ps.explain(word)
 
-return "The word of the day is %s and means %s"%(word, definition)
+print("The word of the day is %s and means %s"%(word, definition))
 
 ```

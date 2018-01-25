@@ -4,6 +4,6 @@
 # date created: 24.01.2018
 
 try:
-    from .core import synonym, explain, help
+    from .core import *
 except:
-    from core import synonym, explain, help
+    from core import *

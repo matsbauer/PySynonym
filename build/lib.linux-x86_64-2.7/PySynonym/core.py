@@ -4,14 +4,13 @@
 # date created: 24.01.2018
 
 import sys
+from bs4 import BeautifulSoup
 
 if sys.version_info >= (3, 0):
     from urllib.request import Request, urlopen
-    from bs4 import BeautifulSoup
 else:
     from urllib2 import Request, urlopen
-    from bs4 import BeautifulSoup
-
+    
 
 def synonym(word):
     req = Request('https://www.thesaurus.com/browse/%s'%word, headers={'User-Agent': 'Mozilla/5.0'})
@@ -30,6 +29,31 @@ def synonym(word):
     return synonyms
     
 
+def acronym(word):
+    req = Request('https://www.thesaurus.com/browse/%s'%word, headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req).read()
+    status = BeautifulSoup(webpage, "html5lib").findAll("div", {"class": "list-holder"})[0] #Find the HTML class that contains the synonyms
+    
+    acronyms = [] #init of return list
+    
+    if sys.version_info >= (3, 0): #if Python 2.x is used, the result has to be encoded.
+        for tag in status.ul.findAll('li'):
+            acronyms.append(tag.select('span.text')[0].get_text())
+    else:
+        for tag in status.ul.findAll('li'):
+            acronyms.append(tag.select('span.text')[0].get_text().encode("utf-8"))
+    
+    return acronyms
+    
+
+def wordoftheday():
+    req = Request('http://translate.reference.com/', headers={'User-Agent': 'Mozilla/5.0'})
+    webpage = urlopen(req).read()
+    status = BeautifulSoup(webpage, "html5lib").findAll("a", {"class": "word"})[0] #Find the HTML class that contains the synonyms
+    
+    return status.get_text().capitalize()
+    
+
 def explain(word):
     req = Request('https://www.dictionary.com/browse/%s'%word, headers={'User-Agent': 'Mozilla/5.0'})
     webpage = urlopen(req).read()
@@ -40,15 +64,16 @@ def explain(word):
     
     return definition.capitalize()
    
-    
+
 def help():
     print("Get a list of synonyms using: ps.synonym('word')\n" + \
-            "Get a word definition using: ps.explain('word')\n" + \
             "Get a word definition using: ps.explain('word')\n")
     
-    
+
 if __name__ == "__main__":
-    testcase = synonym('house')
+    testcase = acronym('fun')
+    print(testcase)
+    testcase = wordoftheday()
     print(testcase)
     testcase = explain('house')
     print(testcase)
