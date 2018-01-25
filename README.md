@@ -30,8 +30,8 @@ if len(set(sentence) & set(ps.synonym('lamp'))) > 0:
 
 ```
 The command to turn on the light is being split into words using nltk. Then the list of tokens is being compared to the list of synonyms of 'lamp' to see if it matches. If yes, the light is being turned on.
-<br>
-Advanced example using nltk processing:
+<br><br>
+Example for use of the wordoftheday function:
 ```python
 import PySynonym as ps
 
@@ -39,7 +39,7 @@ string = "What is the word of the day?"
 
 return ps.wordoftheday()
 
-//
+// or
 
 string = "What is the word of the day and its definition?"
 
