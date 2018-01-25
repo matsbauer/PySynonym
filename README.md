@@ -14,12 +14,13 @@ PySynonym is a plugin that returns a list of synonyms for the given word. This i
 import PySynonym as ps
 
 syn = ps.synonym('house')
+
 if 'building' in syn:
     print("Building is a synonym of house")
 else:
     print("Building is no synonym of house")
 ```
-Advanced example using nltk processing:
+Advanced example using <i>nltk</i> processing:
 ```python
 import PySynonym as ps
 import nltk
@@ -33,7 +34,7 @@ if len(set(sentence) & set(ps.synonym('lamp'))) > 0:
 ```
 The command to turn on the light is being split into words using nltk. Then the list of tokens is being compared to the list of synonyms of 'lamp' to see if it matches. If yes, the light is being turned on.
 <br><br>
-Example for use of the wordoftheday function:
+Example for use of the <i>wordoftheday</i> function:
 ```python
 import PySynonym as ps
 
@@ -41,7 +42,7 @@ string = "What is the word of the day?"
 
 print(ps.wordoftheday())
 
-// or
+# alternative function, including the defintion
 
 string = "What is the word of the day and its definition?"
 
